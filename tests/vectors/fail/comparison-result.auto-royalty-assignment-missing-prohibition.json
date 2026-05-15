@@ -1,0 +1,83 @@
+{
+  "meta": {
+    "comparison_result_id": "cr_2026_missing_royalty_prohibition",
+    "spec_version": "0.1.0",
+    "created_at": "2026-05-14T00:00:00Z",
+    "producer": {
+      "name": "Structure-Fingerprint-Comparator",
+      "type": "ai_agent"
+    }
+  },
+  "subjects": {
+    "source": {
+      "fingerprint_id": "sf_origin_candidate_001",
+      "uri": "https://example.org/fingerprints/sf_origin_candidate_001.json",
+      "role": "candidate_origin"
+    },
+    "target": {
+      "fingerprint_id": "sf_later_candidate_001",
+      "uri": "https://example.org/fingerprints/sf_later_candidate_001.json",
+      "role": "candidate_derivative"
+    }
+  },
+  "proof_comparison": {
+    "proof_status": "partially_matched",
+    "matched_fields": [
+      {
+        "field": "structure_sequence",
+        "match_type": "structural",
+        "notes": "The compared objects share a similar structural sequence."
+      }
+    ],
+    "conflicting_fields": [],
+    "proof_notes": "This fail vector intentionally omits automatic_royalty_assignment from prohibited_downstream_uses."
+  },
+  "inference_comparison": {
+    "comparison_class": "structurally_related",
+    "overall_similarity": 0.76,
+    "dimension_scores": [
+      {
+        "dimension": "concept_graph",
+        "score": 0.82,
+        "notes": "High concept-level similarity."
+      }
+    ],
+    "inference_notes": "This object should fail because automatic royalty assignment is not explicitly prohibited."
+  },
+  "uncertainty": {
+    "confidence": 0.72,
+    "ambiguity_level": "medium",
+    "unresolved_references": [
+      "No signed provenance chain is available."
+    ],
+    "uncertainty_notes": "The comparison is useful for review, but not conclusive."
+  },
+  "review": {
+    "human_review_required": true,
+    "review_reason": [
+      "high_similarity",
+      "unresolved_references",
+      "allocation_sensitive"
+    ],
+    "recommended_review_type": "multi_wing_review",
+    "reviewer_notes": "This object should fail schema validation."
+  },
+  "policy": {
+    "allowed_downstream_uses": [
+      "audit_input",
+      "lineage_relation_input",
+      "human_review_input",
+      "research_input",
+      "dispute_input",
+      "allocation_readiness_input"
+    ],
+    "prohibited_downstream_uses": [
+      "automatic_authorship_claim",
+      "automatic_origin_claim",
+      "automatic_plagiarism_claim",
+      "automatic_legal_claim",
+      "irreversible_enforcement"
+    ],
+    "policy_notes": "This fail vector intentionally omits automatic_royalty_assignment."
+  }
+}
