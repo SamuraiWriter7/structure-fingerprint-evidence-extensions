@@ -1,0 +1,116 @@
+{
+  "meta": {
+    "lineage_relation_id": "lr_2026_missing_prohibited_use",
+    "spec_version": "0.1.0",
+    "created_at": "2026-05-14T00:00:00Z",
+    "producer": {
+      "name": "Trace-Wing-Agent",
+      "type": "ai_agent"
+    }
+  },
+  "subjects": {
+    "source": {
+      "fingerprint_id": "sf_origin_candidate_001",
+      "uri": "https://example.org/fingerprints/sf_origin_candidate_001.json",
+      "role": "possible_origin"
+    },
+    "target": {
+      "fingerprint_id": "sf_later_candidate_001",
+      "uri": "https://example.org/fingerprints/sf_later_candidate_001.json",
+      "role": "possible_derivative"
+    },
+    "additional_subjects": []
+  },
+  "evidence": {
+    "comparison_result_refs": [
+      {
+        "comparison_id": "cr_2026_001",
+        "uri": "https://example.org/comparisons/cr_2026_001.json",
+        "comparison_class": "structurally_related",
+        "overall_similarity": 0.76
+      }
+    ],
+    "evidence_basis": [
+      "structural_similarity",
+      "concept_graph_similarity",
+      "discourse_pattern_similarity",
+      "timestamp_ordering"
+    ],
+    "supporting_notes": [
+      "The source fingerprint has an earlier timestamp.",
+      "The comparison result shows strong inference-level similarity."
+    ]
+  },
+  "relation": {
+    "relation_type": "influenced_by",
+    "directionality": "source_to_target",
+    "strength": "moderate",
+    "relation_summary": "This fail vector intentionally omits automatic_royalty_assignment from prohibited_downstream_uses.",
+    "relation_tags": [
+      "structure-lineage",
+      "trace-protocol",
+      "proof-inference-separation"
+    ]
+  },
+  "reasoning": {
+    "rationale": "This object should fail because automatic_royalty_assignment is not explicitly prohibited.",
+    "positive_indicators": [
+      "strong concept graph similarity",
+      "similar discourse pattern",
+      "earlier timestamp on source fingerprint"
+    ],
+    "limiting_factors": [
+      "incomplete provenance chain",
+      "no direct citation",
+      "possible independent convergence"
+    ],
+    "alternative_relations": [
+      "structurally_related",
+      "independent_convergence",
+      "insufficient_evidence"
+    ]
+  },
+  "uncertainty": {
+    "confidence": 0.68,
+    "ambiguity_level": "medium",
+    "inherited_uncertainty": [
+      "missing provenance chain",
+      "medium confidence comparison result",
+      "incomplete risk analysis"
+    ],
+    "missing_evidence": [
+      "direct citation",
+      "signed provenance",
+      "external attestation"
+    ],
+    "uncertainty_notes": "The relation is plausible but not conclusive."
+  },
+  "review": {
+    "human_review_required": true,
+    "review_reason": [
+      "directional_claim",
+      "insufficient_evidence",
+      "allocation_sensitive"
+    ],
+    "recommended_review_type": "multi_wing_review",
+    "reviewer_notes": "This object should fail schema validation."
+  },
+  "policy": {
+    "allowed_downstream_uses": [
+      "dispute_input",
+      "audit_input",
+      "allocation_readiness_input",
+      "human_review_input",
+      "research_input",
+      "lineage_graph_input"
+    ],
+    "prohibited_downstream_uses": [
+      "automatic_authorship_claim",
+      "automatic_origin_claim",
+      "automatic_plagiarism_claim",
+      "automatic_legal_claim",
+      "irreversible_enforcement"
+    ],
+    "policy_notes": "This fail vector intentionally omits automatic_royalty_assignment."
+  }
+}
