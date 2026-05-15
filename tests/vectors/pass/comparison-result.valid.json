@@ -1,0 +1,105 @@
+{
+  "meta": {
+    "comparison_result_id": "cr_2026_001",
+    "spec_version": "0.1.0",
+    "created_at": "2026-05-14T00:00:00Z",
+    "producer": {
+      "name": "Structure-Fingerprint-Comparator",
+      "type": "ai_agent"
+    }
+  },
+  "subjects": {
+    "source": {
+      "fingerprint_id": "sf_origin_candidate_001",
+      "uri": "https://example.org/fingerprints/sf_origin_candidate_001.json",
+      "role": "candidate_origin"
+    },
+    "target": {
+      "fingerprint_id": "sf_later_candidate_001",
+      "uri": "https://example.org/fingerprints/sf_later_candidate_001.json",
+      "role": "candidate_derivative"
+    }
+  },
+  "proof_comparison": {
+    "proof_status": "partially_matched",
+    "matched_fields": [
+      {
+        "field": "structure_sequence",
+        "match_type": "structural",
+        "notes": "The compared objects share a similar structural sequence."
+      },
+      {
+        "field": "concept_graph",
+        "match_type": "semantic",
+        "notes": "The compared objects share related concept clusters."
+      }
+    ],
+    "conflicting_fields": [],
+    "proof_notes": "Proof-level comparison is partial. This result does not establish authorship, origin, infringement, or allocation entitlement."
+  },
+  "inference_comparison": {
+    "comparison_class": "structurally_related",
+    "overall_similarity": 0.76,
+    "dimension_scores": [
+      {
+        "dimension": "concept_graph",
+        "score": 0.82,
+        "notes": "High concept-level similarity."
+      },
+      {
+        "dimension": "structure_sequence",
+        "score": 0.79,
+        "notes": "Similar sequence of structural moves."
+      },
+      {
+        "dimension": "discourse_pattern",
+        "score": 0.71,
+        "notes": "Moderate similarity in explanatory flow."
+      },
+      {
+        "dimension": "terminology_cluster",
+        "score": 0.67,
+        "notes": "Some shared terminology clusters."
+      }
+    ],
+    "inference_notes": "The result suggests structural relatedness, but does not determine lineage or allocation."
+  },
+  "uncertainty": {
+    "confidence": 0.72,
+    "ambiguity_level": "medium",
+    "unresolved_references": [
+      "No signed provenance chain is available.",
+      "External citation evidence is incomplete."
+    ],
+    "uncertainty_notes": "The comparison is useful for review, but not conclusive."
+  },
+  "review": {
+    "human_review_required": true,
+    "review_reason": [
+      "high_similarity",
+      "unresolved_references",
+      "allocation_sensitive"
+    ],
+    "recommended_review_type": "multi_wing_review",
+    "reviewer_notes": "Human review should examine timestamps, provenance, citations, and possible independent convergence."
+  },
+  "policy": {
+    "allowed_downstream_uses": [
+      "audit_input",
+      "lineage_relation_input",
+      "human_review_input",
+      "research_input",
+      "dispute_input",
+      "allocation_readiness_input"
+    ],
+    "prohibited_downstream_uses": [
+      "automatic_authorship_claim",
+      "automatic_origin_claim",
+      "automatic_plagiarism_claim",
+      "automatic_royalty_assignment",
+      "automatic_legal_claim",
+      "irreversible_enforcement"
+    ],
+    "policy_notes": "This comparison result may support review and lineage analysis, but it must not be used as an automatic authorship, origin, plagiarism, legal, or royalty decision."
+  }
+}
